@@ -1,0 +1,26 @@
+<h1>Scheduling Page</h1>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>Person</th>
+            <th style="width: 50px;"></th>
+            <th *ngFor="let day of days">
+                {{day}}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let counselor of counselors">
+            <td>{{counselor.name}}</td>
+            <td></td>
+            <td *ngFor="let day of days">
+                <select>
+                    <option *ngFor="let option of getMyOptions(counrselor, day)">
+                        {{ option.name }}
+                    </option>
+                </select>
+            </td>
+        </tr>
+    </tbody>
+</table>
